@@ -132,13 +132,17 @@ export default function SafePlateApp() {
 
       const filtered = (j.products || []).filter((p: any) => {
         return (
-          p.product_name &&
+				 p.product_name &&
+				 p.product_name.toLowerCase().includes(q.toLowerCase())
+  
+			
+          /*p.product_name &&
           p.product_name.toLowerCase().includes(q.toLowerCase()) &&
           (
             p.lang_codes_tags?.includes("en") ||
-            p.languages_tags?.includes("en") ||
-            p.lang === "en"
-          )
+            p.languages_tags?.includes("en")  ||
+            p.lang === "en" 
+          )*/
         );
       });
 
